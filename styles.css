@@ -1,0 +1,187 @@
+header {
+    background-color: var(--pure-white);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dark-black);
+}
+
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li a:hover {
+    color: var(--primary-yellow);
+}
+
+
+/* 1. Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Color Variables (Brand color) */
+:root {
+    --primary-yellow: #fbc02d;
+    --dark-black: #1a1a1a;
+    --pure-white: #ffffff;
+    --accent-green: #2e7d32;
+    --font-main: 'Arial', sans-serif;
+}
+
+/* 3. Base Body Styles */
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--dark-black);
+    background-color: var(--pure-white);
+}
+
+/* 4. Basic Link Reset */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 5. Hero Section Styling */
+.hero {
+    background-color: var(--primary-yellow);
+    padding: 4rem 1.5rem; /* Space inside the section */
+    text-align: center; /* Centers the text lines */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh; /* Ensures the section feels prominent */
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* 6. Call to Action Button */
+.cta-btn {
+    background-color: var(--dark-black);
+    color: var(--pure-white);
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.cta-btn:hover {
+    transform: scale(1.05); /* Makes the button slightly grow on hover */
+}
+
+/* 7. Features Section Styling */
+.features {
+    padding: 4rem 1.5rem;
+    background-color: var(--pure-white);
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+}
+
+/* The Container */
+.feature-grid {
+    display: flex;
+    flex-direction: column; /* This stacks items vertically */
+    gap: 2rem; /* Creates space between the cards */
+}
+
+/* Individual Feature Cards */
+.feature-item {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 5px solid var(--primary-yellow); /* Branding accent */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.feature-item h3 {
+    margin-bottom: 1rem;
+    color: var(--dark-black);
+}
+
+/* 8. Footer Styling */
+footer {
+    background-color: var(--dark-black);
+    color: var(--pure-white);
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.social-links {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-links a:hover {
+    color: var(--primary-yellow);
+}
+
+/* 9. Media Query for Tablets and Desktops */
+@media (min-width: 768px) {
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
+        gap: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem; /* Makes the heading larger on big screens */
+    }
+
+    .hero {
+        min-height: 80vh; /* More visual impact on desktop */
+    }
+}
+
+/* 10. Define the animation "recipe" */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Starts slightly lower */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Ends in its natural position */
+    }
+}
+
+/* 11. Apply it to the Hero content */
+.hero h1, .hero p, .hero .cta-btn {
+    animation: fadeIn 2.0s ease-out forwards;
+}
